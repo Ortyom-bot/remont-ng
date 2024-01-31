@@ -1,3 +1,10 @@
+:root {
+	--accent: red;
+	--mainFont: #333;
+	--bg: #111;
+}
+
+
 body {
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.6;
@@ -7,8 +14,12 @@ body {
 
 /* Footer styles */
 footer {
-    background-color: #111;
+    background-color: var(--bg);
     color: #fff;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
 }
 
 .footer-container {
@@ -58,4 +69,75 @@ footer {
     text-decoration: none;
     margin-right: 10px;
     font-size: 1.2em;
+}
+
+.header {
+	max-width: 1440px;
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.searchBtn {
+	width: 24px;
+	height: px;
+	align-self: center;
+}
+
+.decor-space {
+	flex: 0 0 100px;
+}
+
+.header__logo {
+	display: flex;
+	gap: 0 48px;
+	float: left;
+}
+
+.header__menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 32px;
+	float: right;
+}
+
+.header__menu ul {
+	list-style: none;
+	display: flex;
+	gap: 24px;
+}
+
+.header__menu ul > li {
+	line-height: 128%;
+	font-size: 24px;
+}
+
+.header__menu ul > li > a {
+	text-decoration: none	;
+}
+
+.header__menu > a {
+	text-decoration: none;
+  color: var(--mainFont);
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	font-size: 24px;
+}
+
+.header__menu > a:hover {
+  color: var(--accent);
+	text-decoration: none;
+}
+
+.header__menu li > a {
+	color: var(--mainFont);
+	font-size: 24px;
+}
+
+.header__menu li > a:hover {
+  color: var(--accent);
+	text-decoration: none;
 }
