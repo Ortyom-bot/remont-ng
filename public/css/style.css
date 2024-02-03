@@ -35,8 +35,45 @@ body {
 main {
     margin-top: 130px;
 }
+
 .card {
     margin: 10px;
+}
+
+.map-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 100px 100px;
+}
+
+.map-div h4 {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-width: 500px;
+}
+
+.in-map-div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 600px;
+}
+
+.in-map-div h1 {
+	margin-top: 70px;
+}
+
+.map-city {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 70px;
+}
+
+.map-city ul {
+	list-style: none;
 }
 
 
