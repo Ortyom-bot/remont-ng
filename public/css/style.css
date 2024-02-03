@@ -6,10 +6,16 @@
     --duration: 0.7s;
 }
 
+* {
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Ubuntu', sans-serif;
-    line-height: 1.6;
-    background-color: #ffb457;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.6;
+  background-color: #ffb457;
 	margin: 0; /* Убрать отступы по умолчанию */
 	overflow-x: hidden; /* Избежать горизонтальной прокрутки */
 }
@@ -226,6 +232,22 @@ footer {
 .svg-container {
 	width: 0;
 	height: 0;
+}
+
+p,
+label {
+  font:
+    1rem 'Fira Sans',
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+
+sub {
+  font-size: 0.8em;
+  vertical-align: sub;
 }
 
 
