@@ -19,10 +19,6 @@ app.get(["/", "/index"], (req, res) => {
 	res.render("index", { activePage: "index" });
 });
 
-app.get(["/calc"], (req, res) => {
-	res.render("calc", { activePage: "index" });
-});
-
 
 app.listen(PORT, () => {
 	console.log("см. тут: http://localhost:" + PORT);

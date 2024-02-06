@@ -7,7 +7,7 @@
   },
   "name": "remont-ng",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.ejs",
   "scripts": {
     "start": "nodemon app.js"
   },
