@@ -12,7 +12,7 @@ rangeInput.addEventListener('input', function() {
 
 function calculateCost() {
 	const typesRemonts = document.getElementById("TypeRemont").value;
-    const repairTypeSelect = document.getElementById("komnatType");
+  const repairTypeSelect = document.getElementById("komnatType");
 	const heighTypeSelect = document.getElementById("heighType");
 	const remontTypeSelect = document.getElementById("repairType"); 
 	const scalesCheckbox = document.getElementById("scales");

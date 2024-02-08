@@ -7,21 +7,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     const page1Btn = document.getElementById('btnHome');
     const page2Btn = document.getElementById('btnCalc');
     const page3Btn = document.getElementById('btnPrice');
-    loadPage(pageMain);
 
+		/* Переменная для скрытия Калькулятора */
+		const toggledClacMain = document.querySelector('.main-calc');
+
+		/* Функция, которая страбатывает один раз при загрузки стартовой страницы */
+		function defualtState() {
+			loadPage(pageMain);
+			highPageState()
+		}
+
+		/* Функция, которая по умолчанию будет прокручивать страницу наверх (использовать на всех страницах!!!)  */
+		function highPageState() {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
+
+		/* Загрузка ГЛАВНОЙ страницы */
     page1Btn.addEventListener('click', () => {
         loadPage(pageMain);
-    });
+				highPageState()
+				toggledClacMain.style.display = 'none';
+		});
 
+		/* Загрузка КАЛЬКУЛЯТОР страницы */
     page2Btn.addEventListener('click', () => {
         loadPage(pageCalc);
+				highPageState()
+				toggledClacMain.style.display = 'block';
     });
 
+		/* Загрузка ПРАЙС страницы */
     page3Btn.addEventListener('click', () => {
         loadPage(pagePrice);
+				highPageState()
+				toggledClacMain.style.display = 'none';
     });
 
     function loadPage(content) {
         contentDiv.innerHTML = `<h2>${content()}</h2>`;
     }
+
+		defualtState();
 });

@@ -53,15 +53,52 @@
     <!-- Content -->
 	<div id="root"></div>
 
-    <main>
+    <main class="main-calc">
         <div class="card mb-3">
             <div class="card-body">
                 <h1 class="card-title">Калькулятор стоимости ремонта</h1>
 
-                <br>
-                <fieldset class="custom-fieldset">
+							
+							<div class="flex-row-block1">
+
+								<fieldset class="custom-fieldset-dop">
+									<legend class="legend-title">Дополнительные услуги</legend>
+							
+									<div class="checkbox-container">
+											<input type="checkbox" id="scales" name="plan" checked />
+											<label for="plan" class="checkbox-label">Перепланировка</label>
+									</div>
+							
+									<div class="checkbox-container">
+											<input type="checkbox" id="designeProject" name="horns" />
+											<label for="designeProject" class="checkbox-label">Дизайн-проект</label>
+									</div>
+							
+									<div class="checkbox-container">
+											<input type="checkbox" id="enginerProject" name="horns" />
+											<label for="enginerProject" class="checkbox-label">Инженерный проект</label>
+									</div>
+							
+									<div class="checkbox-container">
+											<input type="checkbox" id="podborMaterial" name="horns" />
+											<label for="podborMaterial" class="checkbox-label">Подбор чистовых материалов</label>
+									</div>
+							
+									<div class="checkbox-container">
+											<input type="checkbox" id="priem" name="horns" />
+											<label for="priem" class="checkbox-label">Приёмка квартиры от застройщика</label>
+									</div>
+							
+									<div class="checkbox-container">
+											<input type="checkbox" id="lodge" name="horns" />
+											<label for="lodge" class="checkbox-label">Ремонт лоджии</label>
+									</div>
+							</fieldset>
+
+                <fieldset class="custom-fieldset type-remont-form">
                     <legend class="legend-title">Вид ремонта</legend>
                 
+							<div class="flex-row-block2-inner">
                     <label for="TypeRemont" class="form-label">Тип ремонта:</label>
                     <select id="TypeRemont" class="custom-select" required>
                         <option value="chernovoi">Черновой</option>
@@ -71,85 +108,55 @@
                     </select>
                 </fieldset>
 
-                <br>
-                <fieldset class="custom-fieldset">
-                    <legend class="legend-title">Дополнительные услуги</legend>
-                
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="scales" name="plan" checked />
-                        <label for="plan" class="checkbox-label">Перепланировка</label>
-                    </div>
-                
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="designeProject" name="horns" />
-                        <label for="designeProject" class="checkbox-label">Дизайн-проект</label>
-                    </div>
-                
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="enginerProject" name="horns" />
-                        <label for="enginerProject" class="checkbox-label">Инженерный проект</label>
-                    </div>
-                
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="podborMaterial" name="horns" />
-                        <label for="podborMaterial" class="checkbox-label">Подбор чистовых материалов</label>
-                    </div>
-                
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="priem" name="horns" />
-                        <label for="priem" class="checkbox-label">Приёмка квартиры от застройщика</label>
-                    </div>
-                
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="lodge" name="horns" />
-                        <label for="lodge" class="checkbox-label">Ремонт лоджии</label>
-                    </div>
-                </fieldset>
+								<fieldset class="custom-fieldset rooms-fieldset">
+									<legend class="rooms-legend">Комнаты</legend>
+							
+									<label for="komnatType" class="rooms-label">Количество комнат:</label>
+									<select id="komnatType" class="rooms-select" required>
+											<option value="kom1">1</option>
+											<option value="kom2">2</option>
+											<option value="kom3">3</option>
+											<option value="kom4">4+</option>
+									</select>
+							</fieldset>
 
-                <br>
-                <label for="range" class="range-label">Выберите квадратные метры:</label>
-                <input type="range" id="range" name="range" class="custom-range" min="20" max="300" step="1">
-                <span id="range-value" class="range-value">150 M<sup>2</sup></span>
+							<fieldset class="custom-fieldset ceiling-fieldset">
+									<legend class="ceiling-legend">Потолок</legend>
+							
+									<label for="heighType" class="ceiling-label">Высота потолка:</label>
+									<select id="heighType" class="ceiling-select" required>
+											<option value="pot1">2,5m</option>
+											<option value="pot2">2,7m</option>
+											<option value="pot3">3m</option>
+											<option value="pot4">3,2m</option>
+									</select>
+							</fieldset>
 
-                <br>
-                <br>
-                <fieldset class="rooms-fieldset">
-                    <legend class="rooms-legend">Комнаты</legend>
-                
-                    <label for="komnatType" class="rooms-label">Количество комнат:</label>
-                    <select id="komnatType" class="rooms-select" required>
-                        <option value="kom1">1</option>
-                        <option value="kom2">2</option>
-                        <option value="kom3">3</option>
-                        <option value="kom4">4+</option>
-                    </select>
-                </fieldset>
+							<div>
+							<label for="repairType" class="repair-label">Тип ремонта:</label>
 
-                <br>
-                <fieldset class="ceiling-fieldset">
-                    <legend class="ceiling-legend">Потолок</legend>
-                
-                    <label for="heighType" class="ceiling-label">Высота потолка:</label>
-                    <select id="heighType" class="ceiling-select" required>
-                        <option value="pot1">2,5m</option>
-                        <option value="pot2">2,7m</option>
-                        <option value="pot3">3m</option>
-                        <option value="pot4">3,2m</option>
-                    </select>
-                </fieldset>
+							<select id="repairType" class="repair-select" required>
+									<option value="standard">Стандартный</option>
+									<option value="premium">Премиум</option>
+							</select>
 
-                <br>
-                <label for="repairType" class="repair-label">Тип ремонта:</label>
-                <select id="repairType" class="repair-select" required>
-                    <option value="standard">Стандартный</option>
-                    <option value="premium">Премиум</option>
-                </select>
+							
+						
 
-                <br>
-                <br>
-                <button type="button" class="calculate-button" onclick="calculateCost()">Рассчитать стоимость</button>
+						<div class="form-range-input">
+							<label for="range" class="range-label">Выберите квадратные метры:</label>
+						<div class="input-group-range">
+							<input type="range" id="range" name="range" class="custom-range" min="20" max="300" step="1">
+							<span id="range-value" class="range-value">150 M<sup>2</sup></span>
+						</div>
+					</div>
+				</div>
 
-                <br>
+
+			</div>
+		</div>
+
+
                 <div id="result">
                     <h2>Результат:</h2>
                     <p id="cost">Стоимость ремонта: 0 руб.</p>

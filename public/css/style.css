@@ -90,7 +90,16 @@ main {
 /* Calc styles */
 
 .custom-fieldset {
-	max-width: 300px;
+	max-width: 400px;
+	max-height: 150px;
+	margin: 10px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.custom-fieldset-dop {
+	max-width: 400px;	
 	margin: 10px;
 	padding: 15px;
 	border: 1px solid #ccc;
@@ -107,6 +116,21 @@ main {
 	display: block;
 	margin-bottom: 5px;
 }
+
+.flex-row-block1 {
+	display: flex;
+}
+
+.input-group-range {
+	display: flex;
+	width: 100%;
+}
+
+.form-range-input {
+	margin: 25px 0 50px 3px;
+	min-width: 300px;
+}
+
 
 .custom-select {
 	width: 100%;
@@ -199,6 +223,7 @@ main {
 }
 
 .repair-label {
+	max-width: 400px;
 	display: block;
 	margin-bottom: 5px;
 }
@@ -240,8 +265,8 @@ main {
 }
 
 #cost {
-	font-size: 16px;
-	color: #555;
+	font-size: 24px;
+	color: #333;
 }
 
 
@@ -411,6 +436,9 @@ sub {
   vertical-align: sub;
 }
 
+.main-calc {
+	display: none;
+}
 
 @media screen and (max-width: 50em) {
 	.menu{
