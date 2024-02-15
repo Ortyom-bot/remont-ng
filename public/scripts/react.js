@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 		/* Переменная для скрытия Калькулятора */
 		const toggledClacMain = document.querySelector('.main-calc');
 
+		const toggledMain = document.querySelector('.main');
+
 		/* Функция, которая страбатывает один раз при загрузки стартовой страницы */
 		function defualtState() {
 			loadPage(pageMain);
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadPage(pageMain);
 				highPageState()
 				toggledClacMain.style.display = 'none';
+				toggledMain.style.display = 'block'
 		});
 
 		/* Загрузка КАЛЬКУЛЯТОР страницы */
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadPage(pageCalc);
 				highPageState()
 				toggledClacMain.style.display = 'block';
+				toggledMain.style.display = 'none'
     });
 
 		/* Загрузка ПРАЙС страницы */
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadPage(pagePrice);
 				highPageState()
 				toggledClacMain.style.display = 'none';
+				toggledMain.style.display = 'none'
     });
 
     function loadPage(content) {

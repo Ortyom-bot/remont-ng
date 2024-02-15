@@ -86,6 +86,43 @@ main {
 	font-size: 18px;
 }
 
+.carousel {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: white;
+  }
+
+  #prevBtn {
+    left: 10px;
+  }
+
+  #nextBtn {
+    right: 10px;
+  }
+
 
 /* Calc styles */
 
