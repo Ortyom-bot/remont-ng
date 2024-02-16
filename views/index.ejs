@@ -160,8 +160,22 @@
     <main class="main">
         <div class="card mb-3">
             <div class="card-body">
+				
+				<div class="block-swiper">
+					<div class="swiper-container">
+
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" style="background-image: url(./images/kv-1.jpeg);"></div>
+							<div class="swiper-slide" style="background-image: url(./images/kv-2.png);"></div>
+							<div class="swiper-slide" style="background-image: url(./images/kv-3.jpeg);"></div>
+						</div>
+							<div class="swiper-pagination"></div>
+					</div>
+				</div>
+		
+
                 <h1 class="card-title">О нас</h1>
-        
+				
                 <br>
                 <h4 class="card-text" style="text-align: center;">Мы – частная бригада по ремонту и отделке квартир, коттеджей, таунхаусов, офисов, торговых и административных помещений которая с равным энтузиазмом выполняет заказы частных лиц и организаций</h4>
                 
@@ -344,4 +358,14 @@
 <script src="scripts/react.js"></script>
 <script src="scripts/script.js"></script>
 <script src="scripts/calc.js"></script>
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper('.swiper-container', {
+  		loop: true,
+  		pagination: {
+  		  el: '.swiper-pagination',
+  		},
+  		})
+</script>
 </html>
