@@ -12,9 +12,7 @@ rangeInput.addEventListener('input', function() {
 
 function calculateCost() {
 	const typesRemonts = document.getElementById("TypeRemont").value;
-  const repairTypeSelect = document.getElementById("komnatType");
-	const heighTypeSelect = document.getElementById("heighType");
-	const remontTypeSelect = document.getElementById("repairType"); 
+  	const repairTypeSelect = document.getElementById("komnatType");
 	const scalesCheckbox = document.getElementById("scales");
 	const designeProjectCheckbox = document.getElementById("designeProject");
 	const enginerProjectCheckbox = document.getElementById("enginerProject");
@@ -22,24 +20,77 @@ function calculateCost() {
 	const priemCheckbox = document.getElementById("priem");
 	const lodgeCheckbox = document.getElementById("lodge");
 
+
+  /* Рассчет комнат */
+  const selectedRepairType = repairTypeSelect.value;
+  let costRepairType;
+  if (selectedRepairType === "kom4") {
+    costRepairType = 4;
+  } else if (selectedRepairType === "kom3") {
+    costRepairType = 3;
+  } else if (selectedRepairType === "kom2") {
+    costRepairType = 2;
+  } else if (selectedRepairType === "kom1") {
+    costRepairType = 1;
+  } else {
+    costRepairType = 0;
+  }
+
   /* Рассчет вида ремонта  */
 	let TypeRemontCost; 
-	switch (typesRemonts) 
+	switch (true) 
 	{ 
-		case "chernovoi": 
-		TypeRemontCost = 5500; 
+	case typesRemonts === "kosmeticheski" && costRepairType === 4: 
+		TypeRemontCost = 10000;
+		deadlineDay = "15-40 дней";
 		break;
-	 	case "kosmeticheski": 
-		TypeRemontCost = 4300; 
+	case "kosmeticheski" && costRepairType === 3: 
+		TypeRemontCost = 11000;
+		deadlineDay = "15-40 дней";
 		break;
-	  case "capital": 
-		TypeRemontCost = 8900; 
+	case typesRemonts === "kosmeticheski" && costRepairType === 2: 
+		TypeRemontCost = 12000;
+		deadlineDay = "15-40 дней";
 		break;
-		case "designers": 
-		TypeRemontCost = 13400;
-		break; 
-		default: 
-		TypeRemontCost = 0; 
+	case typesRemonts === "kosmeticheski" && costRepairType === 1: 
+		TypeRemontCost = 13000;
+		deadlineDay = "15-40 дней";
+		break;
+	case typesRemonts === "capital" && costRepairType === 4: 
+		TypeRemontCost = 22000;
+		deadlineDay = "2-3 месяца";
+		break;
+	case typesRemonts === "capital" && costRepairType === 3: 
+		TypeRemontCost = 23000;
+		deadlineDay = "2-3 месяца";
+		break;
+	case typesRemonts === "capital" && costRepairType === 2: 
+		TypeRemontCost = 24000; 
+		deadlineDay = "2-3 месяца";
+		break;
+	case typesRemonts === "capital" && costRepairType === 1: 
+		TypeRemontCost = 25000;
+		deadlineDay = "2-3 месяца"; 
+		break;
+	case typesRemonts === "designers" && costRepairType === 4: 
+		TypeRemontCost = 22000;
+		deadlineDay = "3-6 месяца";
+		break;
+	case typesRemonts === "designers" && costRepairType === 3: 
+		TypeRemontCost = 23000; 
+		deadlineDay = "3-6 месяца";
+		break;
+	case typesRemonts === "designers" && costRepairType === 2: 
+		TypeRemontCost = 24000; 
+		deadlineDay = "3-6 месяца";
+		break;
+	case typesRemonts === "designers" && costRepairType === 1: 
+		TypeRemontCost = 25000;
+		deadlineDay = "3-6 месяца"; 
+		break;
+	default: 
+		TypeRemontCost = 0;
+		deadlineDay = "0 дней";
 	}
 
   /* Рассчет дополнительных работ */
@@ -68,54 +119,10 @@ function calculateCost() {
 		additionalCosnt += 3000; 
 	}
 
-  /* Рассчет комнат */
-  const selectedRepairType = repairTypeSelect.value;
-
-  let costRepairType;
-  if (selectedRepairType === "kom4") {
-    costRepairType = 50000;
-  } else if (selectedRepairType === "kom3") {
-    costRepairType = 40000;
-  } else if (selectedRepairType === "kom2") {
-    costRepairType = 30000;
-  } else if (selectedRepairType === "kom1") {
-    costRepairType = 20000;
-  } else {
-    costRepairType = 0;
-  }
-
-	  /* Рассчет высоты комнат */
-		const selectedHeighType = heighTypeSelect.value;
-
-		let costHeighType;
-		if (selectedHeighType === "pot4") {
-			costHeighType = 50000;
-		} else if (selectedHeighType === "pot3") {
-			costHeighType = 40000;
-		} else if (selectedHeighType === "pot2") {
-			costHeighType = 30000;
-		} else if (selectedHeighType === "pot1") {
-			costHeighType = 20000;
-		} else {
-			costHeighType = 0;
-		}
-
-		/* Вид ремонат */
-		const typeRemont = remontTypeSelect.value;
-
-		let costRemontType;
-		if (typeRemont === "standard") {
-			costRemontType = 10000;
-		} else if (typeRemont === "premium") {
-			costRemontType = 20000;
-		} else {
-			costRemontType = 0;
-		}
-
-
 
 	let rangeCost = parseInt(rangeInput.value);
-  let totalCost = rangeCost * TypeRemontCost + costRepairType + costHeighType + costRemontType + additionalCosnt;
+  let totalCost = rangeCost * TypeRemontCost + additionalCosnt;
   document.getElementById('cost').innerText = `Стоимость ремонта: ${totalCost} руб.`;
   document.getElementById('result').style.display = 'block';
+  document.getElementById('deadline-job').innerText = `Примерный срок ремонта: ${deadlineDay}`;
 }

@@ -98,7 +98,6 @@
                         <div class="flex-row-block2-inner"></div>
                         <label for="TypeRemont" class="form-label">Тип ремонта:</label>
                         <select id="TypeRemont" class="custom-select" required>
-                            <option value="chernovoi">Черновой</option>
                             <option value="kosmeticheski">Косметический</option>
                             <option value="capital">Капитальный</option>
                             <option value="designers">Дизайнерский</option>
@@ -113,31 +112,11 @@
                             <option value="kom1">1</option>
                             <option value="kom2">2</option>
                             <option value="kom3">3</option>
-                            <option value="kom4">4+</option>
+                            <option value="kom4">4</option>
                         </select>
                     </fieldset>
 
-                    <fieldset class="custom-fieldset ceiling-fieldset">
-                        <legend class="ceiling-legend">Потолок</legend>
-                
-                        <label for="heighType" class="ceiling-label">Высота потолка:</label>
-                        <select id="heighType" class="ceiling-select" required>
-                            <option value="pot1">2,5m</option>
-                            <option value="pot2">2,7m</option>
-                            <option value="pot3">3m</option>
-                            <option value="pot4">3,2m</option>
-                        </select>
-                    </fieldset>
-
-                    <div>
-                        <label for="repairType" class="repair-label">Тип ремонта:</label>
-
-                        <select id="repairType" class="repair-select" required>
-                            <option value="standard">Стандартный</option>
-                            <option value="premium">Премиум</option>
-                        </select>
-
-                            
+                    <div>           
                         <div class="form-range-input">
                             <label for="range" class="range-label">Выберите квадратные метры:</label>
                             <div class="input-group-range">
@@ -153,25 +132,27 @@
             <div id="result">
                 <h2>Результат:</h2>
                 <p id="cost">Стоимость ремонта: 0 руб.</p>
+				<p id="deadline-job">Срок ремонта: 0 д</p>
             </div>
         </div>
     </main>
 
+
     <main class="main">
+		<div class="block-swiper">
+			<h1 class="title-swiper">Квартиры</h1>
+			<div class="swiper-container">
+
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background-image: url(./images/kv-1.jpeg);"></div>
+				<div class="swiper-slide" style="background-image: url(./images/kv-2.png);"></div>
+				<div class="swiper-slide" style="background-image: url(./images/kv-3.jpeg);"></div>
+			</div>
+				<div class="swiper-pagination"></div>
+		</div>
+	</div>
         <div class="card mb-3">
             <div class="card-body">
-				
-				<div class="block-swiper">
-					<div class="swiper-container">
-
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" style="background-image: url(./images/kv-1.jpeg);"></div>
-							<div class="swiper-slide" style="background-image: url(./images/kv-2.png);"></div>
-							<div class="swiper-slide" style="background-image: url(./images/kv-3.jpeg);"></div>
-						</div>
-							<div class="swiper-pagination"></div>
-					</div>
-				</div>
 		
 
                 <h1 class="card-title">О нас</h1>
@@ -363,6 +344,9 @@
 
   const swiper = new Swiper('.swiper-container', {
   		loop: true,
+		autoplay: {
+    		delay: 5000,
+  		},
   		pagination: {
   		  el: '.swiper-pagination',
   		},

@@ -39,7 +39,7 @@ body {
 .block-swiper {
 	overflow: hidden;
 	width: 100%;
-	height: 700px;
+	height: 900px;
 	background: #333;
 }
 
@@ -62,14 +62,28 @@ body {
 	background-color: rgba(0, 0, 0, 0.5) ;
 }
 
+.title-swiper {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	z-index: 3;
+	color: #fff;
+}
+
 
 /* Main styles */
 main {
-    margin-top: 130px;
+    margin-top: 0px;
 }
 
 .card {
     margin: 10px;
+}
+
+.card-title {
+	left: 50%;
+	text-align: center;
 }
 
 .map-div {
@@ -500,6 +514,7 @@ sub {
 }
 
 .main-calc {
+	margin-top: 130px;
 	display: none;
 }
 
